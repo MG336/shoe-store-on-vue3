@@ -1,26 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <item-select title="1234535435tyryerrrj" :sneakers="obj"></item-select>
+  <div class="test"></div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+
+ 
+ 
+import ItemSelect from './components/ItemSelect'
+import { obj } from './js/sneakers.js'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ItemSelect,
+  },
+  data(){
+    return {
+      obj:obj
+    }
+    
   }
 }
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
