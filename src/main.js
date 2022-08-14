@@ -1,9 +1,9 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import App from './App.vue'
 // import Vue from 'vue';
 
-import './style/normalize.css'
+import './style/main.scss'
 
-let app = createApp(App);
+let app = createApp(App)
 
 app.mount('#app')

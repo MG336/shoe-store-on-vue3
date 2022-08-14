@@ -31,16 +31,8 @@ sneakers = {
                 ()=> require('../assets/items/item_1/colors/black/4.webp'),
                 ()=> require('../assets/items/item_1/colors/black/5.webp'),
                 ()=> require('../assets/items/item_1/colors/black/6.webp'),
+                ()=> require('../assets/items/item_1/colors/black/7.webp')
             ]
     }
 }
 
-class Sneakers {
-    constructor(title, objSize, objColors){
-        this.title = title;
-        this.size = objSize;
-        this.colors = objColors;
-    }
-}
-
-let sneakers1 = new Sneakers()

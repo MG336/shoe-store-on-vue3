@@ -1,36 +1,43 @@
 
 <template>
-    <div class="gallery-box">
-        <div class="items" @click="showModal">
-        
-        <div class="items__item" v-html="item" :data-index="index" v-for="(item,index) of srcArr" :key="item.id"></div>
-        </div>
-    </div>
-    <div class="modal2" v-if="modal.show">
-        <div class="modal2__items">
-            <div class="modal2__item" v-html="item" 
-                :data-index="index" 
-                v-for="(item, index) of srcArr" 
-                :key="item.id">
+    <div>
+        <div class="gallery-box">
+            <div class="items" @click="showModal">
+            
+            <div class="items__item" v-html="item" :data-index="index" v-for="(item,index) of srcArr" :key="item.id"></div>
             </div>
         </div>
-        <div class="modal2__close" @click="showModal" @mousedown.prevent>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-            </svg>
-        </div>
-        <div class="modal2__nav modal2__nav--left" @click="previousImg" @mousedown.prevent>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
-            </svg>
-        </div>
-        <div class="modal2__nav modal2__nav--right" @click="nextImg" @mousedown.prevent>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
-            </svg>
+        <div class="modal2" v-if="modal.show">
+            <div class="modal2__items">
+                <div class="modal2__item" v-html="item" 
+                    :data-index="index" 
+                    v-for="(item, index) of srcArr" 
+                    :key="item.id">
+                </div>
+            </div>
+            <div class="modal2__close" @click="showModal" @mousedown.prevent>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </div>
+            <div class="modal2__nav modal2__nav--left" @click="previousImg" @mousedown.prevent>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+                </svg>
+            </div>
+            <div class="modal2__nav modal2__nav--right" @click="nextImg" @mousedown.prevent>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
+                </svg>
+            </div>
+            <div class="modal2__numbers">
+                01
+                <span class="modal2__numberLine"></span>
+                {{modal.imgIndex.toString().
+                    split('').length == 1 ? '0' + (modal.imgIndex + 1) : modal.imgIndex}}
+            </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -67,9 +74,9 @@ export default {
                 }else if(item.search('.mp4') != -1) {
                     item = `<video class="items__img" 
                     src="${item}"
-                    autoplay
-                    loop
-                    mute
+                    autoplay="autoplay"
+                    loop="loop"
+                    mute="mute"
                     alt="video">`
 
 
@@ -155,10 +162,7 @@ export default {
 
 </script>
 <style lang="scss">
-.container {
-        padding: 1.5rem;
-        border: 1px solid;
-    }
+
     .image-gallery-section {
         overflow-x: scroll;
     }
@@ -177,6 +181,7 @@ export default {
     overflow-x: scroll;
 }
 .modal2{
+    z-index: 10;
     position: absolute;
     top: 0;
     left: 0;
@@ -201,13 +206,14 @@ export default {
         flex: 0 0 auto;//flex-grow, flex-shrink, flex-basis
         align-items: center;
         justify-content: center;
-
+        
         img,video{
             display: block;
             align-content: center;
             height: auto;
             max-height: 100vh;
             max-width: 100%;
+            
         }
     }
     &__close {
@@ -236,7 +242,21 @@ export default {
             right: 0.8rem;
         }
     }
-
+    &__numbers{
+        position: absolute;
+        display: flex;
+        width: 70px;
+        bottom: 40px;
+        left: 40px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__numberLine{
+        height: 1px;
+        width: 20px;
+        background-color: black;
+    }
+    
         
 
 }
@@ -264,11 +284,12 @@ export default {
             }
             [data-index="0"] {
                     grid-column: 1/3;
-                    border: 1px solid;
                 }
             
         }
-       
+       .gallery-box {
+        overflow-x: hidden;
+        }
     }
 
 </style>
