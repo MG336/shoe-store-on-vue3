@@ -1,37 +1,4 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./global.scss);
 
-
-$spacer: 1rem;
-$spacers:(
-    0: 0,
-    1: $spacer * .25,
-    2: $spacer * .5,
-    3: $spacer,
-    4: $spacer * 3,
-    5: $spacer * 50
-);
-
-.m {
-@each $num, $spacer in $spacers {
-    &t--#{$num}{
-        margin-top: $spacer;
-    }
-    &b--#{$num}{
-        margin-bottom: $spacer;
-    }
-}
-}
-
-
-.container {
-    padding: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px){
-    .container {
-        padding: 1.5rem;
-    }
-}

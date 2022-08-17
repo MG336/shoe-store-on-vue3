@@ -11,7 +11,6 @@
 // import photoVideo from './components/photoVideo' 
 import ItemSelect from './components/ItemSelect'
 import { obj } from './js/sneakers.js'
-console.log(obj)
 
 export default {
   name: 'App',

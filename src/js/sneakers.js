@@ -28,7 +28,7 @@ let obj = {
                     ()=> require('../assets/items/item_1/colors/black/1.webp'),
                     ()=> require('../assets/items/item_1/colors/black/video.mp4'),
                     ()=> require('../assets/items/item_1/colors/black/3.webp'),
-                    ()=> require('../assets/items/item_1/colors/black/4.webp'),
+                    // ()=> require('../assets/items/item_1/colors/black/4.webp'),
                     ()=> require('../assets/items/item_1/colors/black/5.webp'),
                     ()=> require('../assets/items/item_1/colors/black/6.webp'),
                 
@@ -61,7 +61,7 @@ let obj = {
                     ()=> require('../assets/items/item_1/colors/red/1.webp'),
                     ()=> require('../assets/items/item_1/colors/black/video.mp4'),
                     ()=> require('../assets/items/item_1/colors/red/3.webp'),
-                    ()=> require('../assets/items/item_1/colors/red/4.webp'),
+                    // ()=> require('../assets/items/item_1/colors/red/4.webp'),
                     ()=> require('../assets/items/item_1/colors/red/5.webp'),
                     ()=> require('../assets/items/item_1/colors/red/6.webp'),
                 
@@ -89,12 +89,12 @@ let obj = {
             },
             color2: {
                 title:'Puma White-Ethereal Blue-High Risk Red',
-                priсe:'$85.00',
+                priсe:'$59.99',
                 img: [
                     ()=> require('../assets/items/item_1/colors/blue/1.webp'),
                     ()=> require('../assets/items/item_1/colors/black/video.mp4'),
                     ()=> require('../assets/items/item_1/colors/blue/3.webp'),
-                    ()=> require('../assets/items/item_1/colors/blue/4.webp'),
+                    // ()=> require('../assets/items/item_1/colors/blue/4.webp'),
                     ()=> require('../assets/items/item_1/colors/blue/5.webp'),
                     ()=> require('../assets/items/item_1/colors/blue/6.webp'),
                 
@@ -127,7 +127,7 @@ let obj = {
                     ()=> require('../assets/items/item_1/colors/yellow/1.webp'),
                     ()=> require('../assets/items/item_1/colors/black/video.mp4'),
                     ()=> require('../assets/items/item_1/colors/yellow/3.webp'),
-                    ()=> require('../assets/items/item_1/colors/yellow/4.webp'),
+                    // ()=> require('../assets/items/item_1/colors/yellow/4.webp'),
                     ()=> require('../assets/items/item_1/colors/yellow/5.webp'),
                     ()=> require('../assets/items/item_1/colors/yellow/6.webp'),
                 

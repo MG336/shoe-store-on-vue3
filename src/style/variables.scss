@@ -1,0 +1,80 @@
+$color-1: #6F42C1;
+$color-2: #F6E059;
+$color-3: #000000;
+
+
+$spacer: 1rem;
+$spacers:(
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 3,
+    5: $spacer * 5
+);
+
+.m {
+@each $num, $spacer in $spacers {
+    &t--#{$num}{
+        margin-top: $spacer;
+    }
+    &b--#{$num}{
+        margin-bottom: $spacer;
+    }
+}
+}
+
+$font-size-base: 1rem;
+$fontSize:(
+    1: $font-size-base * 2.5,
+    2: $font-size-base * 2,
+    3: $font-size-base * 1.75,
+    4: $font-size-base * 1.5,
+    5: $font-size-base * 1.25,
+    6: $font-size-base,
+    7: $font-size-base * .75
+);
+.fs{
+    @each $num, $var in $fontSize {
+        &--#{$num}{
+            font-size: $var;
+        }
+    }
+
+}
+
+
+$fontWeight: (
+    400,
+    700
+);
+.fw{
+    @each $var in $fontWeight {
+        &--#{$var}{
+            font-weight: $var;
+        }
+    }
+}
+
+$colors: (
+    "p": #6F42C1,
+    "s" : #F6E059,
+    'w' : #ffffff,
+    'b': #000000
+);
+.bg {
+    color: map-get($colors, "primary");
+    @each $color, $var in $colors {
+        &--#{$color} {
+            background-color: $var;
+        }
+    }
+}
+.fc {
+    color: map-get($colors, "primary");
+    @each $color, $var in $colors {
+        &--#{$color} {
+            color: $var;
+        }
+    }
+}
