@@ -5,10 +5,6 @@
 </template>
 <script>
 
-
-
- 
-// import photoVideo from './components/photoVideo' 
 import ItemSelect from './components/ItemSelect'
 import { obj } from './js/sneakers.js'
 

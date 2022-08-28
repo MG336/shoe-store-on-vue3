@@ -8,7 +8,7 @@
     sizeTextColor($event),
     $event.target.tagName === 'INPUT'
         ? $emit('sizeValue', $event.target.value)
-        : ''">
+        : ''" @mousedown.prevent>
             <label class="size-box__item" v-for="value in changeOrderSize"
                 :key="value.id">
                 <div class="size-box__border"></div>

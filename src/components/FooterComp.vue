@@ -19,7 +19,7 @@
         </a>
     </div>
     <div class="footer__copy">
-        <a class="footer__link fs--7" href="https://mg1010.art" target="_blank"> © BUILT BY MIKHAIL GORBUNOV, 2022</a>
+        <a class="footer__link fs--7" href="https://mg1010.com" target="_blank"> © BUILT BY MIKHAIL GORBUNOV, 2022</a>
     </div>
 
 </div>

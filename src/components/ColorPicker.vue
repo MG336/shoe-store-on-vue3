@@ -17,10 +17,10 @@ export default {
     name: "СolorPicker",
     emits: {
         onChangeColor: (event => {
-            if (event != undefined) {
+            if (event) {
                 return true
             } else {
-                return false
+                return []
             }
         })
     },
@@ -52,13 +52,14 @@ export default {
             return images
         },
         getPickColorId(e) {
+            console.log(1111)
             if (!e.target.matches('.pickerImges__img')) return
             this.colorPickerId = e.target.dataset.id
         }
 
     },
-
 }
+
 </script>
 
 <style lang="scss">

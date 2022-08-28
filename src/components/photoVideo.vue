@@ -54,7 +54,7 @@
 <script>
 
 export default {
-    name: 'photoVideo',
+    name: 'PhotoVideo',
     data() {
         return {
             srcArr: this.changeArrImgProps(),
@@ -239,7 +239,7 @@ export default {
     &__close {
         width: 40px;
         height: 40px;
-
+        cursor: pointer;
         position: absolute;
         top: 0;
         right: 0;

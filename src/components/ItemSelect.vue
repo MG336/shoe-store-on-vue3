@@ -16,8 +16,7 @@
                 <h2 class="color__title mb--2" right-nav__color>Color</h2>
                 <h2 class="color__subTitle mb--3 fs--6">{{gallery.colorVersion.title}}</h2>
 
-                <color-picker @on-change-color="changeСolor" :color-version="gallery.colorVersion" 
-                :obj="sneakers"/>
+                <color-picker @on-change-color="changeСolor" @mousedown.prevent :color-version="gallery.colorVersion" :obj="sneakers"/>
 
                 <size-grid
                 :size="gallery.colorVersion.size" 
@@ -50,27 +49,20 @@
 
                 Add to Wishlist</button>
             </div>
-            <div class="description m-top">
+            <div class="description mt--4">
                 <h2 class="description__title">Description</h2>
                 <div>We reached into the archives for this one. Hitting the streets in the early 2000’s as a low-profile silhouette with roots back to a </div>
-                <ul class="description__list">
-                    <li class="description__li">
-                        Style: 193069_15 
-                    </li>
-                    <li>
-                        Color: High Risk Red-Puma Black
-                    </li>
-                </ul>
             </div>
-            <hr class="m-top">
-            <div class="reviews ">
+            <hr class="mt--4">
+            <div class="reviews">
                 <h2 class="reviews__title">Reviews {{gallery.reviews}}</h2>
                 <div class="reviews__stars">
                     <svg v-for="item in gallery.stars" :key="item.id" class="flex-shrink-0" height="1rem" width="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path stroke-width="1.5" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#6F42C1"></path></svg>
                 </div>
             </div>
-            <hr>
-            <div class="shipping">
+            <hr class="">
+            <div class="shipping mt--4">
+                <h2 class="shipping__title mb--3">Shipping and Returns</h2>
                 <p>
                     Free standard shipping on orders over $75 before tax, plus free returns on all qualifying orders.
                 </p>
@@ -89,11 +81,11 @@
 
 
 <script>
-import PhotoVideo from "./photoVideo"
+import PhotoVideo from "./PhotoVideo.vue"
 import ColorPicker from "./ColorPicker.vue"
-import SizeGrid from "./SizeGrid"
-import TopNav from "./TopNav"
-import FooterComp from "./FooterComp"
+import SizeGrid from "./SizeGrid.vue"
+import TopNav from "./TopNav.vue"
+import FooterComp from "./FooterComp.vue"
     
     export default {
     name: 'itemSelect',
@@ -130,6 +122,7 @@ import FooterComp from "./FooterComp"
        
         methods: {
             changeСolor(event){
+                if(!event) return
                 this.gallery.colorVersion = this.sneakers.colors['color'+event]
             },
             addBasketNum(){
@@ -259,6 +252,9 @@ import FooterComp from "./FooterComp"
         margin: 0;
 
     }
+  }
+  .shipping {
+    
   }
 
 @media (min-width: 768px){
